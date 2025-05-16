@@ -1,5 +1,5 @@
 # Memory Game Task
-    Dice Game Creation Using HTML, CSS, JS DOM
+    Memory Game Creation Using HTML, CSS, JS DOM
 
 # TechStacks
     1. HTML
