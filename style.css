@@ -54,17 +54,50 @@ body{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    padding-left: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
 }
 
 .item{
     position:relative;
     width: 100px;
     height: 100px;
-    background: green;
-    display: flex;
+    background: white;
+    display: flex;    
     justify-content: center;
     align-items: center;
     font-size: 50px;
-
+    transform: rotateY(180deg);
+    transition: 0.25s;
 }
 
+.item.boxOpen{
+    transform: rotateY(0deg);
+}
+
+.item::after{
+    content: '';
+     position: absolute;
+     background: green;
+     inset: 0; 
+     transform: rotateY(0deg);
+     backface-visibility: hidden;
+     /* opacity: 50%; */
+     transition: 0.25s;
+}
+
+.boxOpen:after ,
+.boxMatch:after
+{
+    transform: rotateY(180deg);
+}
+
+#alert{
+    font-size: 32px;
+    color: blueviolet;
+    border: 1px solid red;
+    font-style: italic;
+    padding: 10px;
+    border-radius: 25px;
+}
